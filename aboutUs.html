@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>About Us | Automotive Tech</title>
+
+<link rel="stylesheet" href="aboutUs.css"> 
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-bolt"></i>
+            <span>AUTOMOTIVE TECH</span>
+        </div>
+
+        <div class="nav-container">
+            <div class="nav-indicator"></div>
+
+            <a href="1home.html" class="nav-link active">HOME</a>
+            <a href="2explore.html" class="nav-link">EXPLORE TECH</a>
+            <a href="3insight.html" class="nav-link">INSIGHT AUTOMOTIVE</a>
+            <a href="4galery.html" class="nav-link">GALLERY</a>
+            <a href="5contact.html" class="nav-link">CONTACT</a>
+        </div>
+    </nav>
+</header>
+
+
+<section class="about-section">
+
+    <h1 class="about-title">MEET OUR TEAM</h1>
+    <p class="about-subtitle">Driven by Passion. Built with Vision.</p>
+
+    <div class="team-container">
+
+        <div class="team-card">
+            <img src="img/depa.jpeg" alt="">
+            <h3>Dheva Danuarta</h3>
+        </div>
+
+        <div class="team-card">
+            <img src="img/ikhram.jpg" alt="">
+            <h3>Ikhram Bilal W.</h3>
+        </div>
+
+        <div class="team-card">
+            <img src="img/nopal.jpeg" alt="">
+            <h3>Naufal Daffa R.</h3>
+        </div>
+
+        <div class="team-card">
+            <img src="img/asnan.jpeg" alt="">
+            <h3>Afnan Fauzi P.</h3>
+        </div>
+
+    </div>
+
+    <div class="team-description">
+        Kami adalah tim yang memiliki ketertarikan besar terhadap perkembangan teknologi otomotif masa depan.
+        Website ini kami bangun sebagai representasi visi kami terhadap mobilitas modern, inovasi kendaraan listrik,
+        serta transformasi industri otomotif yang terus berkembang secara global.
+        <br><br>
+        Automotive Tech bukan hanya sekadar proyek akademik, tetapi sebuah langkah awal
+        dalam memahami dan mengeksplorasi masa depan dunia otomotif.
+    </div>
+
+</section>
+
+<footer>
+    <p>&copy; 2026 Automotive Tech. All rights reserved.</p>
+    <a href="aboutUs.html" class="footer-about">
+        About Us
+    </a>
+</footer>
+
+<script>
+const indicator = document.querySelector(".nav-indicator");
+const links = document.querySelectorAll(".nav-link");
+const nav = document.querySelector(".nav-container");
+
+links.forEach(link => {
+    link.addEventListener("mouseenter", () => {
+        const { offsetLeft, offsetWidth } = link;
+
+        indicator.style.width = offsetWidth + "px";
+        indicator.style.left = offsetLeft + "px";
+        indicator.style.opacity = "1";
+    });
+});
+
+nav.addEventListener("mouseleave", () => {
+    indicator.style.opacity = "0";
+});
+</script>
+
+</body>
+</html>

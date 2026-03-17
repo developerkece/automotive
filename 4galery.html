@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automotive Tech | Future of Mobility</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="4galery.css">
+</head>
+<body>
+
+    <header>
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-bolt"></i>
+        <span>AUTOMOTIVE TECH</span>
+      </div>
+
+        <div class="nav-wrapper">
+            <div class="nav-indicator"></div>
+
+            <a href="1home.html" class="nav-link">HOME</a>
+            <a href="2explore.html" class="nav-link">EXPLORE TECH</a>
+            <a href="3insight.html" class="nav-link">INSIGHT AUTOMOTIVE</a>
+            <a href="4galery.html" class="nav-link active">GALLERY</a>
+            <a href="5contact.html" class="nav-link">CONTACT</a>
+        </div>
+    </nav>
+
+    <div class="banner">GALLERY</div>
+
+    <section class="gallery">
+        <div class="card" onclick="openModal(this)">
+            <img src="img/2019 Lamborghini Aventador SVJ Coupe.jpg">
+            <p>Mobil Sport Modern</p>
+        </div>
+
+        <div class="card" onclick="openModal(this)">
+            <img src="img/future car (1).jpg">
+            <p>Mobil Konsep Futuristik</p>
+        </div>
+
+        <div class="card" onclick="openModal(this)">
+            <img src="img/mesin (1).jpg">
+            <p>Teknologi Otomotif</p>
+        </div>
+    </section>
+
+    <div class="modal" id="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img id="modalImg">
+            <p id="modalText"></p>
+            <button onclick="closeModal()">Tutup</button>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Automotive Tech. All Rights Reserved.
+        <a href="aboutUs.html" class="footer-about">
+        About Me
+    </a>
+    </footer>
+
+    <script>
+        /* ===== MODAL ===== */
+        function openModal(card) {
+            const modal = document.getElementById("modal");
+            modal.classList.add("active");
+
+            document.getElementById("modalImg").src =
+                card.querySelector("img").src;
+
+            document.getElementById("modalText").innerText =
+                card.querySelector("p").innerText;
+        }
+
+        function closeModal() {
+            document.getElementById("modal").classList.remove("active");
+        }
+
+        /* ===== NAVBAR CAPSULE ===== */
+        const nav = document.querySelector('.nav-wrapper');
+        const indicator = document.querySelector('.nav-indicator');
+        const links = document.querySelectorAll('.nav-link');
+
+        function moveIndicator(el) {
+            const rect = el.getBoundingClientRect();
+            const parent = nav.getBoundingClientRect();
+
+            indicator.style.width = rect.width + 'px';
+            indicator.style.left = (rect.left - parent.left) + 'px';
+        }
+
+       
+        window.addEventListener('load', () => {
+            const active = document.querySelector('.nav-link.active');
+            moveIndicator(active);
+        });
+
+        
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                moveIndicator(link);
+            });
+        });
+
+       
+        nav.addEventListener('mouseleave', () => {
+            const active = document.querySelector('.nav-link.active');
+            moveIndicator(active);
+        });
+
+        document.querySelectorAll('.card-slider').forEach(slider => {
+
+    const imgs = slider.querySelectorAll('img');
+    let i = 0;
+
+    setInterval(() => {
+        imgs[i].classList.remove('active');
+        i = (i + 1) % imgs.length;
+        imgs[i].classList.add('active');
+    }, 2000);
+
+});
+    </script>
+
+<script src="transisi.js"defer></script>
+
+</body>
+</html>

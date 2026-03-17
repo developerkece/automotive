@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otomotif Tech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="3insight.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-bolt"></i>
+        <span>AUTOMOTIVE TECH</span>
+      </div>
+    <nav class="nav-container">
+        <div class="nav-indicator"></div>
+
+        <a href="1home.html" class="nav-link">HOME</a>
+        <a href="2explore.html" class="nav-link">EXPLORE TECH</a>
+        <a href="3insight.html" class="nav-link active">INSIGHT AUTOMOTIVE</a>
+        <a href="4galery.html" class="nav-link">GALLERY</a>
+        <a href="5contact.html" class="nav-link">CONTACT</a>
+    </nav>
+</header>
+
+
+<main class="container">
+    <div class="grid">
+
+           <div class="card text-card">
+    <h3>Apple Semakin Serius Garap Mobil Listrik</h3>
+
+    <p>
+        Apple dikabarkan tengah serius mengembangkan mobil listrik melalui proyek rahasia
+        bernama <strong>Project Titan</strong>. Proyek ini menjadi langkah besar Apple untuk
+        masuk ke industri otomotif masa depan.
+    </p>
+
+    <p>
+        Untuk mempercepat pengembangan, Apple merekrut sejumlah ahli otomotif dan mantan
+        insinyur Tesla, serta menjalin komunikasi dengan beberapa produsen mobil ternama.
+        Hal ini menunjukkan keseriusan mereka dalam membangun kendaraan sendiri.
+    </p>
+
+    <p>
+        Mobil generasi awal diperkirakan belum sepenuhnya otonom, namun akan dibekali
+        teknologi canggih, sistem pintar, dan desain futuristik khas Apple.
+    </p>
+
+    <p>
+        Jika terealisasi, mobil Apple berpotensi menjadi pesaing kuat di pasar kendaraan
+        listrik global sekaligus membawa inovasi baru dalam dunia otomotif.
+    </p>
+</div>
+
+
+        <div class="card image-card">
+            <img src="img/insight1.jpg" alt="">
+        </div>
+
+        <div class="card image-card">
+            <img src="img/insight 2.jpg" alt="">
+        </div>
+
+           <div class="card text-card">
+    <h3>Faraday Future FFZERO1 – Supercar Listrik Futuristik</h3>
+
+    <p>
+        Faraday Future memperkenalkan mobil konsep listrik supercar bernama
+        <strong>FFZERO1</strong> pada ajang Consumer Electronics Show (CES) 2016
+        di Las Vegas sebagai contoh visi masa depan kendaraan listrik performa tinggi.
+    </p>
+
+    <p>
+        FFZERO1 dibekali empat motor listrik yang mampu menghasilkan total tenaga
+        lebih dari 1.000 tenaga kuda, sehingga mobil ini bisa melesat dari 0–100
+        km/jam dalam waktu sangat singkat — menggabungkan teknologi listrik dengan
+        performa supercar.
+    </p>
+
+    <p>
+        Desain FFZERO1 sangat futuristik, menggunakan satu kursi pengemudi dan gaya
+        aerodinamis yang ekstrem, serta memanfaatkan kontrol teknologi tinggi yang
+        inovatif.
+    </p>
+
+    <p>
+        Konsep FFZERO1 menjadi dasar inspirasi bagi Faraday Future untuk pengembangan
+        platform kendaraan listrik produksi masa depan yang lebih realistis dan siap
+        dipasarkan.
+    </p>
+</div>
+
+</main>
+
+<footer class="footer">
+    <p> © 2026 Automotive Tech. All rights reserved.</p>
+    <a href="aboutUs.html" class="footer-about">
+        About Us
+    </a>
+</footer>
+<script>
+const nav = document.querySelector('.nav-container');
+const indicator = document.querySelector('.nav-indicator');
+const links = document.querySelectorAll('.nav-link');
+
+function moveIndicator(el) {
+    const rect = el.getBoundingClientRect();
+    const parent = nav.getBoundingClientRect();
+
+    indicator.style.width = rect.width + 'px';
+    indicator.style.left = (rect.left - parent.left) + 'px';
+}
+
+// default aktif
+window.onload = () => {
+    const active = document.querySelector('.nav-link.active');
+    moveIndicator(active);
+};
+
+// hover
+links.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+        moveIndicator(link);
+    });
+
+    link.addEventListener('mouseleave', () => {
+        const active = document.querySelector('.nav-link.active');
+        moveIndicator(active);
+    });
+});
+</script>
+
+<script src="transisi.js"defer></script>
+
+</body>
+</html>
